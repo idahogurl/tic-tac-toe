@@ -1,0 +1,126 @@
+body {
+  font: 24pt Chewy;  
+  background-color: seagreen;  
+}
+
+#chalkboard-wrapper {
+  padding-top: 50px;
+}
+
+#chalkboard {
+  background: #ffffff url("chalkboard.jpg") no-repeat center top;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.25);
+  -moz-box-shadow:    1px 1px 2px 0px rgba(50, 50, 50, 0.25);
+  box-shadow:         1px 1px 2px 0px rgba(50, 50, 50, 0.25);
+  width: 800px;
+  height: 560px; 
+  margin: auto;
+}
+
+.gameSpace {
+  height: 100px;
+  width: 100px;
+  border-bottom: 5px solid rgba(255, 255, 255, .5);
+  border-right: 5px solid rgba(255, 255, 255, .5);
+  text-align: center;
+}
+
+#gameTable {
+  width: 315px;
+  padding-top: 70px;
+  color: rgba(255, 255, 255, .75); 
+  font-size: 48pt;
+  cursor: pointer;
+  margin: auto;
+}
+
+#gameTable[disabled] {
+  cursor: not-allowed !important;
+}
+
+.gameSpace:nth-child(3) {
+  border-right: none;
+}
+
+tr:last-child .gameSpace {
+  border-bottom: none;
+}
+
+a:hover {
+  color: currentColor;
+}
+
+a.xLetter {
+  color: red;
+}
+
+a.oLetter {
+  color: blue;
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s 0s ease-in, visibility 0.5s 0s ease-in;
+  -moz-transition: opacity 0.5s 0s ease-in, visibility 0.5s 0s ease-in;
+  -o-transition: opacity 0.5s 0s ease-in, visibility 0.5s 0s ease-in;
+  transition: opacity 0.5s 0s ease-in, visibility 0.5s 0s ease-in;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s 0s ease-in, visibility 0.5s 0s ease-in;
+  -moz-transition: opacity 0.5s 0s ease-in, visibility 0.5s 0s ease-in;
+  -o-transition: opacity 0.5s 0s ease-in, visibility 0.5s 0s ease-in;
+  transition: opacity 0.5s 0s ease-in, visibility 0.5s 0s ease-in;
+}
+
+#prompt {
+  background-color: white;
+  width: 400px;
+  height: 100px;  
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.25);
+  -moz-box-shadow:    1px 1px 2px 0px rgba(50, 50, 50, 0.25);
+  box-shadow:         1px 1px 2px 0px rgba(50, 50, 50, 0.25);
+  margin: auto;
+  position: absolute;
+  top: 2%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);  
+  z-index: 5;
+}
+
+a {
+  cursor: pointer;  
+}
+
+.usersTurn, .computersTurn {
+  background-color: darkturquoise;
+  padding: 10px;
+  width: 200px;
+  color: white;
+  text-align: center;
+  font-size: 18pt;
+  text-transform: capitalize;
+  border-radius: 5px 0 0 0;  
+}
+
+.computersTurn {
+  background-color: coral;
+}
+
+#shadow-overlay
+{
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position:absolute;
+}
