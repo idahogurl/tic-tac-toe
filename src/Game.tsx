@@ -146,7 +146,6 @@ export default function TicTacToeGame() {
     message = "Computer wins.";
   }
   if (!message) message = "Draw.";
-  // const showGameOver = ended && !user.isPlaying;
 
   return (
     <div>

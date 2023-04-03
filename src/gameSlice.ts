@@ -84,13 +84,7 @@ export const gameSlice = createSlice({
       state.ended = true;
     },
     resetGame: () => {
-      return {
-        user: { ...initialPlayerState, isPlaying: true },
-        computer: { ...initialPlayerState },
-        displayTable: false,
-        spaces: [...initialSpacesState],
-        ended: false
-      };
+      return initialState;
     }
   }
 });
