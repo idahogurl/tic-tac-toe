@@ -108,10 +108,7 @@ export default class ComputerActions {
   }
 
   getEmptySpace(): number {
-    let indexes: number[] = Array.apply(null, { length: 9 }).map(function (
-      _: null,
-      index: number
-    ) {
+    const indexes: number[] = Array.from({ length: 9 }, (_, index) => {
       return index + 1;
     });
 
