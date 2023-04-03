@@ -83,9 +83,8 @@ export const gameSlice = createSlice({
       }
       state.ended = true;
     },
-    resetGame: (state) => {
-      console.log("I GET HERE");
-      state = {
+    resetGame: () => {
+      return {
         user: { ...initialPlayerState, isPlaying: true },
         computer: { ...initialPlayerState },
         displayTable: false,

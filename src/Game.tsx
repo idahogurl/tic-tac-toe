@@ -11,13 +11,13 @@ class TicTacToePrompt extends Component<any, any> {
     return (
       <div id="prompt" className={this.props.className}>
         Do you want to be <br />
-        <a className="xLetter" onClick={this.props.handleClick}>
+        <button className="letterButton xLetter" onClick={()=> { this.props.handleClick('X') }}>
           X
-        </a>{" "}
-        or{" "}
-        <a className="oLetter" onClick={this.props.handleClick}>
+        </button>
+        {" "}or{" "}
+        <button className="letterButton oLetter" onClick={()=> { this.props.handleClick('O') }}>
           O
-        </a>
+        </button>
         ?
       </div>
     );
@@ -41,7 +41,7 @@ class GameOverNotification extends Component<any, any> {
       <div className={this.props.className} id="prompt">
         Game Over. {this.props.message}
         <div>
-          <a onClick={this.props.onClick}>Play again?</a>
+          <button className="resetButton" onClick={this.props.onClick}>Play again?</button>
         </div>
       </div>
     );
@@ -81,16 +81,12 @@ export default function TicTacToeGame() {
 
   const dispatch = useAppDispatch();
 
-  function selectLetter(e: MouseEvent) {
-    const target = e.target as HTMLAnchorElement;
-    const userSelection = target.innerHTML;
+  function selectLetter(userSelection: string) {
     const computerSelection: string = userSelection === "O" ? "X" : "O";
     dispatch(setLetterSelection({ userSelection, computerSelection }));
   }
 
-  function spaceSelected(e: MouseEvent) {
-    const target = e.target as HTMLTableCellElement;
-    const spaceNumber = parseInt(target.id, 10);
+  function spaceSelected(spaceNumber: number) {
     // To store new value of `spaces` since `dispatch` is like `setState` where the updated value is not immediately available
     const spacesState = [...spaces];
     if (user.isPlaying) {
@@ -155,7 +151,7 @@ export default function TicTacToeGame() {
   return (
     <div>
       <TicTacToePrompt
-        handleClick={(e: MouseEvent) => selectLetter(e)}
+        handleClick={selectLetter}
         className={displayTable ? "hide" : "show"}
       />
 
